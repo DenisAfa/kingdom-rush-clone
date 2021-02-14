@@ -1,0 +1,21 @@
+@import '../scripts/auth/scss/auth.scss';
+@import '../scripts/achievements/scss/achievements.scss';
+@import '../scripts/credits/scss/credits.scss';
+@import '../scripts/auth/scss/lang-switcher.scss';
+
+@font-face {
+  font-family: "Dimbo";
+  src: url("../assets/fonts/Dimbo-ru-en.otf") format("opentype");
+}
+.fontPrelod {
+  font-family: "Dimbo";
+  position: absolute;
+  left:  -300px;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+// @import './levels-map.scss';

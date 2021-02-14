@@ -1,0 +1,47 @@
+.popup-attendance-wrapper {
+    position: fixed;
+    z-index: 15;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(41, 41, 41, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.popup-attendance-content {
+    background-image: url('../assets/interface/modal-bg.png');
+    width: 658px;
+    height: 441px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    cursor: auto;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-out;
+    bottom: 100%;
+}
+
+.close-popup {
+    background-image: url('../assets/interface/button_close.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.show-top {
+    bottom: 0;
+}

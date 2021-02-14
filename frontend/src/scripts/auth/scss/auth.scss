@@ -1,0 +1,413 @@
+@import '../../attendance/scss/create.attendance.scss';
+@import './loader.scss';
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Dimbo";
+  overflow-y: hidden;
+}
+
+.blur-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  height: 100%;
+  width: 100%;
+
+  background-image: url("../assets/auth/kingdom-rush.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+
+  filter: blur(15px);
+  -webkit-filter: blur(15px);
+  opacity: 0.8;
+}
+
+.sign-kingdom-rush,
+.start-page {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100%;
+
+  margin: auto;
+
+  background-image: url("../assets/auth/kingdom-rush.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.logo-start-button,
+.logo-credits-button {
+  background-image: url("../assets/auth/btn.png");
+  background-size: cover;
+  margin: auto;
+  position: relative;
+  font-family: "Dimbo";
+  letter-spacing: 1px;
+  color: #fbd738;
+  text-align: center;
+
+  cursor: pointer !important;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.logo-start-button {
+  width: 230px;
+  height: 122px;
+  font-size: xxx-large;
+  line-height: 122px;
+  margin-bottom: 10px;
+}
+
+.logo-credits-button {
+  width: 230px;
+  height: 122px;
+  font-size: xx-large;
+  line-height: 122px;
+  margin-bottom: 10px;
+}
+
+.logout-game {
+  background-image: url("../assets/interface/button_close.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  z-index: 2;
+  margin: 10px;
+
+  z-index: 2;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.attendance-per-year-game {
+  background-image: url("../assets/interface/button_menu.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  margin: 10px;
+  bottom: 50px;
+  z-index: 2;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.wrapper-logo-start-page {
+  width: 408px;
+  height: 500px;
+}
+
+.logo-start-page {
+  background-image: url("../assets/auth/logo.png");
+  width: 408px;
+  height: 292px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sign-window {
+  width: 620px;
+  height: 438px;
+  background-size: cover;
+  background-image: url("../assets/modal-bg/start-modal-bg.png");
+  padding: 0 60px;
+  & .sign-info {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    & .response-info {
+      font-family: "Dimbo";
+      color: #e6e152;
+      font-size: x-large;
+      letter-spacing: 0.8px;
+      position: absolute;
+      bottom: -10px;
+      margin: 0 20px;
+    }
+  }
+}
+
+.sign-info-in,
+.sign-info-up {
+  color: rgb(230, 225, 82);
+  cursor: pointer;
+  font-family: "Dimbo";
+  letter-spacing: 1px;
+  background-image: url("../assets/auth/title.png");
+  background-size: contain;
+  display: block;
+  width: 226px;
+  height: 94px;
+  text-align: center;
+  line-height: 74px;
+  font-size: x-large;
+  position: absolute;
+  top: -9px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.sign-info-in {
+  left: 0;
+}
+
+.sign-info-up {
+  right: 0;
+}
+
+.sign-form {
+  font-family: "Dimbo";
+  letter-spacing: 0.8px;
+  font-size: xx-large;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  & .wrapper-username,
+  .wrapper-password {
+    display: flex;
+    flex-direction: column;
+    & input {
+      font-family: "Dimbo";
+      letter-spacing: 0.8px;
+      font-size: xx-large;
+      color: rgb(230, 225, 82);
+      height: 67px;
+      border: none;
+      background-image: url("../assets/auth/field.png");
+      padding: 0 0 0 20px;
+      background-size: cover;
+      background-color: #6e3c24;
+      margin: 10px 0;
+    }
+
+    & input::placeholder {
+      font-family: "Dimbo";
+      letter-spacing: 0.8px;
+      font-size: xx-large;
+      color: rgb(230, 225, 82);
+    }
+  }
+
+  & .keep-me {
+    font-size: x-large;
+
+    & input {
+      position: absolute;
+      display: none;
+      &:checked + label {
+        color: #ffc107;
+      }
+      &:checked + label > .checkbox-image {
+        background-image: url("../assets/sign/onNoText.png");
+      }
+      &:checked + label > .checkbox-text {
+        transform: scale(1.1);
+      }
+    }
+
+    & label {
+      color: rgb(230, 225, 82);
+      display: inline-flex;
+      margin: 10px 0;
+      cursor: pointer;
+
+      & .checkbox-image {
+        width: 84px;
+        height: 40px;
+        background-image: url("../assets/sign/offNoText.png");
+        background-size: cover;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  & input.sign-in-submit {
+    height: 150px;
+    width: 278px;
+    border: none;
+    background: url("../assets/auth/btn.png");
+    background-size: cover;
+    cursor: pointer;
+    font-family: "Dimbo";
+    letter-spacing: 0.8px;
+    font-size: xx-large;
+    color: #ffc107;
+    align-self: center;
+    position: relative;
+    bottom: -22px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.active-sign-info {
+  cursor: default;
+  color: #ffc107;
+  transform: scale(1.2);
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+main {
+  height: calc(100vh - 50px);
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+
+  height: 50px;
+  padding: 5px 15px;
+
+  background: url('../assets/overlay_60.png'), url('../assets/auth/kingdom-rush.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+
+  font-size: 16px;
+  color: #fbd738;
+  position: relative;
+  z-index: 3;
+  cursor: default;
+  transition: all 250ms linear;
+
+  .the-rolling-scopes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: auto auto auto 0;
+
+    .rss {
+      width: 100px;
+      height: 40px;
+      margin: 0 5px;
+
+      background: url('../assets/icons/rs_school_js.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      opacity: 0.8;
+      &:hover {
+        border-bottom: 2px solid transparent;
+        opacity: 1;
+      }
+    }
+  }
+
+  .wrapper-team-people {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: auto;
+
+    .team-people {
+      padding: 0 5px;
+
+      a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      & a>* {
+        display: inline-block;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+
+        &.Iogsotot {
+          background-image: url("https://avatars.githubusercontent.com/u/50149163?s=400&u=9a763fefd25839d62bec939ad7302d8a29948cb4&v=4");
+        }
+        &.DenisAfa {
+          background-image: url("https://avatars.githubusercontent.com/u/64201928?s=400&u=b33f2c5f182a021649e8ac548259a05dc3ed792e&v=4");
+        }
+        &.Abdulloh76 {
+          background-image: url("https://avatars.githubusercontent.com/u/59783836?s=400&v=4");
+        }
+        &.mrINEX {
+          background-image: url("https://avatars.githubusercontent.com/u/35580404?s=400&u=742a3a17f24933ff191b620cf949e6f1b872e20a&v=4");
+        }
+      }
+    }
+  }
+
+  .year-create {
+    margin: auto 0 auto auto;
+    font-size: 24px;
+  }
+
+  a {
+    display: block;
+
+    color: #fbd738;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 250ms linear;
+
+    &:hover {
+      opacity: 1;
+      color: #fbad38;
+      border-bottom: 2px solid #fbad38;
+      transition: all 250ms linear;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.flex-for-achevements {
+  display: flex;
+}
